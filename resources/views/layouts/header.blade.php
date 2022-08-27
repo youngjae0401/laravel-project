@@ -1,3 +1,3 @@
-<div>
-    헤더
-</div>
+<header>
+    Header
+</header>
