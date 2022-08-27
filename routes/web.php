@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('register', [RegisterController::class, 'view'])->name('register');
-Route::POST('register', [RegisterController::class, 'store']);
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('register', [RegisterController::class, 'view'])->name('register');
+    Route::post('register', [RegisterController::class, 'create']);
+
+    Route::get('login', [LoginController::class, 'view'])->name('login');
+    Route::post('login', [LoginController::class, 'login']);
+});
