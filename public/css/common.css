@@ -8,18 +8,16 @@ header, footer {
     color: #fff;
 }
 
-main {
-    width: 60%;
-    margin: 0 auto;
-}
-
-input {
+input,
+textarea {
     border: 1px solid #333;
     border-radius: 5px;
     padding: 6px 8px;
 }
 
 form {
+    width: 60%;
+    margin: 0 auto;
     padding: 20px 0;
 }
 
@@ -33,6 +31,14 @@ form {
     margin-top: 0;
 }
 
+.form-box.textarea {
+    align-items: flex-start;
+}
+
+.form-box.textarea .label {
+    margin-top: 5px;
+}
+
 .form-box .label {
     width: 80px;
 }
@@ -43,8 +49,7 @@ form {
     margin-left: 20px;
 }
 
-.form-box .btn > a,
-.form-box .submit > input {
+.btn {
     cursor: pointer;
     background-color: #333;
     border: none;
@@ -54,6 +59,63 @@ form {
     padding: 5px 8px;
 }
 
-.form-box .btn {
+.m-l-5 {
     margin-left: 5px;
+}
+
+.list {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.list .write {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list ul {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.list ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ebebeb;
+    padding: 20px 0;
+}
+
+.list ul li:first-child {
+    border-top: none;
+}
+
+.list ul li > div {
+    text-align: center;
+}
+
+.list ul li .num {
+    width: 80px;
+}
+
+.list ul li .content {
+    width: 500px;
+}
+
+.list ul li .writer {
+    width: 120px;
+}
+
+.list ul li .date {
+    width: 140px;
+}
+
+.list ul li .etc {
+    width: 160px;
+    display: flex;
+    justify-content: center;
 }

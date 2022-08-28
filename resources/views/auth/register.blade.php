@@ -27,7 +27,7 @@
         @enderror
     </div>
     <div class="form-box">
-        <div class="submit"><input type="submit" value="회원가입"></div>
+        <div><input type="submit" class="btn" value="회원가입"></div>
     </div>
 </form>
 @endsection

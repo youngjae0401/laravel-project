@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -29,7 +28,7 @@ class LoginController extends Controller
         }
         
         $request->session()->regenerate();
-        return redirect()->intended("/");
+        return redirect()->intended("/board");
     }
     
     protected function validator(array $data)

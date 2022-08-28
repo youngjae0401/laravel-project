@@ -20,8 +20,8 @@
         @enderror
     </div>
     <div class="form-box">
-        <div class="submit"><input type="submit" value="로그인"></div>
-        <div class="btn"><a href="{{ route('register') }}">회원가입</a></div>
+        <div><input type="submit" class="btn" value="로그인"></div>
+        <div class="m-l-5"><a href="{{ route('register') }}" class="btn">회원가입</a></div>
     </div>
 </form>
 @endsection
