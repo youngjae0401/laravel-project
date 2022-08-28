@@ -10,7 +10,18 @@ class BoardController extends Controller
 {
     protected function view()
     {
-        return view('board.index');
+        $getData = array(
+            'boards.id',
+            'boards.title',
+            'boards.content',
+            'boards.created_at',
+            'users.user_id',
+        );
+        $boards = Board::join('users', 'users.id', '=', 'boards.user_id')->get($getData);
+
+        $param = [];
+        $param['lists'] = $boards;
+        return view('board.index', $param);
     }
 
     protected function create()

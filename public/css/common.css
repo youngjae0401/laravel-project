@@ -119,3 +119,7 @@ form {
     display: flex;
     justify-content: center;
 }
+
+.list ul li .null {
+    width: 100%;
+}
