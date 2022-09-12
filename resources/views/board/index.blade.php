@@ -19,7 +19,7 @@
                     <span>{{ $list->created_at }}</span>
                 </div>
                 <div class="etc">
-                    <div><button class="btn">수정</button></div>
+                    <div><a class="btn" href="{{ route('show', ['id' => $list->id]) }}">수정</a></div>
                     <div class="m-l-5"><button class="btn">삭제</button></div>
                 </div>
             </li>

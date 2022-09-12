@@ -42,7 +42,28 @@ class BoardController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect("/");
+        return redirect("board");
+    }
+
+    protected function show($id)
+    {
+        $board = Board::where('id', $id)->first();
+        return view('board.show', compact('board'));
+    }
+    
+    protected function edit(Request $request, $id)
+    {
+        $validator = $this->validator($request->all());
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $board = Board::where('id', $id)->first();
+        $board->title = $request['title'];
+        $board->content = $request['content'];
+        $board->save();
+
+        return redirect("board");
     }
 
     protected function validator(array $data)

@@ -16,7 +16,7 @@ use App\Http\Controllers\BoardController;
 |
 */
 
-Route::group(['middleware' => ['guest']], function () {
+Route::group(['middleware' => ['guest']], function() {
     Route::get('/register', [RegisterController::class, 'view'])->name('register');
     Route::post('/register', [RegisterController::class, 'store']);
 
@@ -24,8 +24,14 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/login', [LoginController::class, 'login']);
 });
 
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', [BoardController::class, 'view'])->name('board');
-    Route::get('/create', [BoardController::class, 'create'])->name('create');
-    Route::post('/store', [BoardController::class, 'store'])->name('store');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/', function() {
+        return redirect('board');
+    });
+
+    Route::get('/board', [BoardController::class, 'view'])->name('board');
+    Route::get('/board/create', [BoardController::class, 'create'])->name('create');
+    Route::post('/board/store', [BoardController::class, 'store'])->name('store');
+    Route::get('/board/show/{id}', [BoardController::class, 'show'])->name('show');
+    Route::put('/board/edit/{id}', [BoardController::class, 'edit'])->name('edit');
 });
