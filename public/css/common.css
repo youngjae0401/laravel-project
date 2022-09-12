@@ -92,6 +92,8 @@ form {
 
 .list ul li:first-child {
     border-top: none;
+    background-color: #efefef;
+    font-weight: 700;
 }
 
 .list ul li > div {

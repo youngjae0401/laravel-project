@@ -4,6 +4,22 @@
 @section('content')
 <div class="list">
     <ul>
+        <li class="top">
+            <div class="num">
+                <span>번호</span>
+            </div>
+            <div class="content">
+                제목
+            </div>
+            <div class="writer">
+                <span>작성자</span>
+            </div>
+            <div class="date">
+                <span>생성일</span>
+            </div>
+            <div class="etc">
+            </div>
+        </li>
         @forelse($lists as $key => $list)
             <li>
                 <div class="num">
@@ -19,8 +35,10 @@
                     <span>{{ $list->created_at }}</span>
                 </div>
                 <div class="etc">
-                    <div><a class="btn" href="{{ route('show', ['id' => $list->id]) }}">수정</a></div>
-                    <div class="m-l-5"><button class="btn">삭제</button></div>
+                    @if($user_id == $list->user_idx)
+                        <div><a class="btn" href="{{ route('show', ['id' => $list->id]) }}">수정</a></div>
+                        <div class="m-l-5"><button class="btn">삭제</button></div>
+                    @endif
                 </div>
             </li>
         @empty

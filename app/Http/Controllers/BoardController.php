@@ -14,12 +14,14 @@ class BoardController extends Controller
             'boards.id',
             'boards.title',
             'boards.content',
+            'boards.user_id AS user_idx',
             'boards.created_at',
             'users.user_id',
         );
         $boards = Board::join('users', 'users.id', '=', 'boards.user_id')->get($getData);
 
         $param = [];
+        $param['user_id'] = Auth::id();
         $param['lists'] = $boards;
         return view('board.index', $param);
     }
