@@ -37,7 +37,11 @@
                 <div class="etc">
                     @if($user_id == $list->user_idx)
                         <div><a class="btn" href="{{ route('show', ['id' => $list->id]) }}">수정</a></div>
-                        <div class="m-l-5"><button class="btn">삭제</button></div>
+                        <form method="POST" action="{{ route('delete', ['id' => $list->id]) }}">
+                            @method('DELETE')
+                            @csrf
+                            <div class="m-l-5"><button class="btn">삭제</button></div>
+                        </form>
                     @endif
                 </div>
             </li>

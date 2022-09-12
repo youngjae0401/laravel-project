@@ -3,7 +3,7 @@
 
 @section('content')
 
-<form method="POST" action="{{ route('login') }}">
+<form class="form" method="POST" action="{{ route('login') }}">
     @csrf
     <div class="form-box">
         <div class="label"><label for="user_id">아이디</label></div>

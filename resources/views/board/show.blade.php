@@ -2,7 +2,7 @@
 @section('title', '게시판 상세글 보기')
 
 @section('content')
-<form method="POST" action="{{ route('edit', ['id' => $board->id ]) }}">
+<form class="form" method="POST" action="{{ route('edit', ['id' => $board->id]) }}">
     @method('PUT')
     @csrf
     <div class="form-box">

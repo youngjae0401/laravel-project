@@ -2,7 +2,7 @@
 @section('title', '게시판 글쓰기')
 
 @section('content')
-<form method="POST" action="{{ route('store') }}">
+<form class="form" method="POST" action="{{ route('store') }}">
     @csrf
     <div class="form-box">
         <div class="label"><label for="title">제목</label></div>

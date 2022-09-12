@@ -34,4 +34,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/board/store', [BoardController::class, 'store'])->name('store');
     Route::get('/board/show/{id}', [BoardController::class, 'show'])->name('show');
     Route::put('/board/edit/{id}', [BoardController::class, 'edit'])->name('edit');
+    Route::delete('/board/delete/{id}', [BoardController::class, 'delete'])->name('delete');
 });

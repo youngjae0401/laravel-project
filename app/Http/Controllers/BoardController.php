@@ -65,7 +65,15 @@ class BoardController extends Controller
         $board->content = $request['content'];
         $board->save();
 
-        return redirect("board");
+        return redirect('board');
+    }
+    
+    protected function delete($id)
+    {
+        $board = Board::where('id', $id)->first();
+        $board->delete();
+
+        return redirect('board');
     }
 
     protected function validator(array $data)
